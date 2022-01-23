@@ -122,6 +122,11 @@ while(true)
         showboard(Hash);
     }
     public static boolean  checkwinner() {
+        if((player1pos.size()+player2pos.size())==9)
+        {
+            System.out.println("The game is tied ");
+            return true;
+        }
         List zerorow=Arrays.asList(1,2,3);
         List onerow=Arrays.asList(4,5,6);
         List tworow=Arrays.asList(7,8,9);
@@ -135,7 +140,7 @@ while(true)
         winning.add(zerorow);
         winning.add(onerow);
         winning.add(tworow);
-        winning.add(zerorow);
+        winning.add(zerocol);
         winning.add(onecol);
         winning.add(twocol);
         winning.add(dig1);
@@ -148,7 +153,7 @@ while(true)
                 System.out.println("player 1 won");
                 return true;
             }
-            else if(player2pos.containsAll(l))
+             if(player2pos.containsAll(l))
             {
                 System.out.println("player 2 won");
                 return true;
